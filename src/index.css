@@ -1,0 +1,84 @@
+:root {
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  overscroll-behavior: none;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+canvas {
+  display: block;
+  width: 100vw;
+  height: 100vh;
+}
+
+.panel_control {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  z-index: 100;
+}
+
+.shader_selector {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 100;
+  display: flex;
+  gap: 15px;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: #2424245d;
+  backdrop-filter: blur(5px);
+}
+
+.shader_selector_btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 6px;
+  min-width: 120px;
+  transition: all 0.3s;
+}
+.shader_selector_btn:hover {
+  scale: 1.1;
+  border-color: #00ffff;
+  box-shadow: 0 0 10px #00ffff;
+}
+
+.shader_selector_img {
+  width: 100%;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 4px;
+  margin-bottom: 8px;
+}
+
+.shader_selector_text {
+  text-align: center;
+  font-size: 12px;
+}
+
+.telun {
+  position: absolute;
+  top: 0;
+  left: 12px;
+  z-index: 100;
+  font-size: 1.5rem;
+  letter-spacing: 2px;
+  color: #fff;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
