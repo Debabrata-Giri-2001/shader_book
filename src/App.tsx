@@ -9,6 +9,7 @@ import flower22 from "./assets/flower22.png";
 import s1 from "./assets/s1.jpeg";
 import s2 from "./assets/s2.jpeg";
 import s3 from "./assets/s3.jpeg";
+import s4 from "./assets/s4.jpeg";
 
 import fragmentShader1 from "./shaders/project1/fragmentShader.glsl?raw";
 import vertexShader1 from "./shaders/project1/vertexShader.glsl?raw";
@@ -16,6 +17,8 @@ import fragmentShader2 from "./shaders/project2/fragmentShader.glsl?raw";
 import vertexShader2 from "./shaders/project2/vertexShader.glsl?raw";
 import fragmentShader3 from "./shaders/project3/fragmentShader.glsl?raw";
 import vertexShader3 from "./shaders/project3/vertexShader.glsl?raw";
+import fragmentShader4 from "./shaders/project4/fragmentShader.glsl?raw";
+import vertexShader4 from "./shaders/project4/vertexShader.glsl?raw";
 
 import type { ShaderItem, TweakpaneInstance } from "./types";
 import { computeUVScaleForCover } from "./utils/computeUVScaleForCover";
@@ -100,8 +103,22 @@ const shaderData: ShaderItem[] = [
     imageUrl: s3,
     transparent: true
   },
+  {
+    name: "Oval Raymarch",
+    fragmentShader: fragmentShader4,
+    vertexShader: vertexShader4,
+    geometryType: "Plane",
+    uniforms: {
+      uTime: { value: 0 },
+      uMouse: { value: new THREE.Vector2(0, 0) },
+      uResolution: { value: new THREE.Vector2(window.innerWidth, window.innerHeight) },
+    },
+    setupControls: () => { },
+    imageUrl: s4,
+    transparent: true
+  },
 
-  
+
 ];
 
 
