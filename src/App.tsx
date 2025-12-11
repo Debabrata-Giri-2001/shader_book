@@ -10,6 +10,7 @@ import s1 from "./assets/s1.jpeg";
 import s2 from "./assets/s2.jpeg";
 import s3 from "./assets/s3.jpeg";
 import s4 from "./assets/s4.jpeg";
+import s5 from "./assets/s5.jpeg";
 
 import fragmentShader1 from "./shaders/project1/fragmentShader.glsl?raw";
 import vertexShader1 from "./shaders/project1/vertexShader.glsl?raw";
@@ -19,6 +20,8 @@ import fragmentShader3 from "./shaders/project3/fragmentShader.glsl?raw";
 import vertexShader3 from "./shaders/project3/vertexShader.glsl?raw";
 import fragmentShader4 from "./shaders/project4/fragmentShader.glsl?raw";
 import vertexShader4 from "./shaders/project4/vertexShader.glsl?raw";
+import fragmentShader5 from "./shaders/project5/fragmentShader.glsl?raw";
+import vertexShader5 from "./shaders/project5/vertexShader.glsl?raw";
 
 import type { ShaderItem, TweakpaneInstance } from "./types";
 import { computeUVScaleForCover } from "./utils/computeUVScaleForCover";
@@ -117,6 +120,24 @@ const shaderData: ShaderItem[] = [
     imageUrl: s4,
     transparent: true
   },
+  {
+    name: "Fun Ball",
+    fragmentShader: fragmentShader5,
+    vertexShader: vertexShader5,
+    geometryType: "Sphere",
+    uniforms: {
+      uTime: { value: 0 },
+      uMouse: { value: new THREE.Vector2(0, 0) },
+      uSkyColor: { value: new THREE.Vector3(1.000, 1.000, 0.547) },
+      uGroundColor: { value: new THREE.Vector3(0.562, 0.275, 0.111) },
+    },
+    setupControls: (pane, uniforms) => {
+      pane.addBinding(uniforms.uSkyColor, "value", { label: "Sky Color" });
+      pane.addBinding(uniforms.uGroundColor, "value", { label: "Ground Color" });
+    },
+    imageUrl: s5,
+    transparent: true
+  },
 
 
 ];
@@ -128,7 +149,7 @@ const shaderData: ShaderItem[] = [
 const createGeometry = (type: ShaderItem["geometryType"]): THREE.BufferGeometry => {
   switch (type) {
     case "Sphere":
-      return new THREE.SphereGeometry(1, 30, 30);
+      return new THREE.SphereGeometry(1, 164, 164);
     case "Box":
       return new THREE.BoxGeometry(1.5, 1.5, 1.5, 32, 32, 32);
     case "Torus":
